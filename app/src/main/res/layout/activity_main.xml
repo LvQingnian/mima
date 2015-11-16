@@ -1,0 +1,190 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="7dp"
+    android:background="#EAEBE7"
+    >
+
+    <ScrollView
+        style="@style/background">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="23sp"
+                android:layout_gravity="center_horizontal"
+                android:textStyle="italic"
+                android:text="入住设置" />
+            <View
+                android:layout_marginTop="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:background="#ff00"/>
+
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="门牌号 0001~9999"/>
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:text="客户ID 11111~99999"/>
+            </LinearLayout>
+            <LinearLayout
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+                <EditText
+                    android:background="@android:drawable/edit_text"
+                    android:id="@+id/edit_menpaihao"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    android:inputType="number"
+                    android:text="1001"/>
+                <EditText
+                    android:background="@android:drawable/edit_text"
+                    android:id="@+id/edit_userID"
+                    android:layout_width="0dp"
+                    android:inputType="number"
+                    android:layout_weight="1"
+                    android:layout_height="wrap_content"
+                    />
+            </LinearLayout>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:text="请输入结算数据"/>
+            <EditText
+                android:background="@android:drawable/edit_text"
+                android:id="@+id/edit_userTime"
+                android:layout_width="200dp"
+                android:inputType="number"
+                android:gravity="center"
+                android:layout_height="wrap_content"
+                android:text="1"/>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/relative_bg"
+                android:padding="5dp"
+                >
+                <RadioGroup
+                    android:id="@+id/group_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/group_rb_date"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="按日结算1~95"/>
+                    <RadioButton
+                        android:id="@+id/group_rb_hour"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="按小时结算1~23"/>
+                </RadioGroup>
+
+                <View
+                    android:layout_centerInParent="true"
+                    android:layout_width="2dp"
+                    android:layout_height="50dp"
+                    android:background="#8080FF"/>
+
+                <RadioGroup
+                    android:id="@+id/group_fugaiPassword"
+                    android:layout_alignParentRight="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content">
+                    <RadioButton
+                        android:id="@+id/group_rb_bufugai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="true"
+                        android:text="不覆盖之前的密码"/>
+                    <RadioButton
+                        android:id="@+id/group_rb_fugai"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="覆盖之前的密码"/>
+
+                </RadioGroup>
+            </RelativeLayout>
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_jiami"
+                android:layout_marginTop="5dp"
+                android:textSize="23sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="加密后的8位密码"/>
+
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/tv_shunxu"
+                android:layout_marginTop="5dp"
+                android:textSize="23sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="打乱的顺序"/>
+
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:layout_gravity="center_horizontal"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="显示8位密码"/>
+
+            <EditText
+                android:id="@+id/edit_password"
+                android:background="@android:drawable/edit_text"
+                android:layout_marginTop="5dp"
+                android:textSize="20sp"
+                android:inputType="number"
+                android:layout_gravity="center_horizontal"
+                android:gravity="center"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:textColor="@android:color/black"
+                android:hint="00000000"/>
+
+            <Button
+                android:id="@+id/btn_creatSecret"
+                android:layout_marginTop="5dp"
+                android:textSize="18sp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                style="@style/button_stytle"
+                android:onClick="click"
+                android:text="生成8位密码"/>
+
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
