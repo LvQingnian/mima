@@ -144,7 +144,7 @@
 
 
             <TextView
-                android:visibility="gone"
+
                 android:id="@+id/tv_shunxu"
                 android:layout_marginTop="5dp"
                 android:textSize="23sp"
